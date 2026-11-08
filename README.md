@@ -4,8 +4,6 @@ gact 是一款专注于 GitHub 动态的 Android 客户端，帮助你跟进关�
 
 > gact 尚处于早期开发阶段，并非 GitHub 官方应用。
 
-<a id="features"></a>
-
 ## 功能
 
 - 查看 GitHub 通知，区分未读项目。
@@ -16,8 +14,6 @@ gact 是一款专注于 GitHub 动态的 Android 客户端，帮助你跟进关�
 - 从通知打开对应的 GitHub 页面。
 - 在多次启动之间安全保留登录会话。
 - 适配全屏、屏幕挖孔、横屏和分屏布局。
-
-<a id="download-and-installation"></a>
 
 ## 下载与安装
 
@@ -30,8 +26,6 @@ gact 支持 Android 8.0（API 26）及以上版本。安装 APK 前，Android �
 
 Android 包名为 `com.storytellerf.gact`。
 
-<a id="sign-in-to-github"></a>
-
 ## 登录 GitHub
 
 1. 打开 gact，点击 **Sign in with GitHub**。
@@ -40,8 +34,6 @@ Android 包名为 `com.storytellerf.gact`。
 4. 返回 gact，应用会完成登录并加载通知。
 
 gact 不会要求你在应用中输入 GitHub 密码。会话凭据保存在 Android 安全存储中，退出登录时删除。为显示私有仓库的通知详情，gact 请求 GitHub 的 `repo` OAuth 权限。GitHub 目前没有针对私有仓库内容的只读 OAuth 权限。
-
-<a id="using-the-app"></a>
 
 ## 使用应用
 
@@ -54,31 +46,21 @@ gact 不会要求你在应用中输入 GitHub 密码。会话凭据保存在 And
 - 详情加载后，点击 **Open on GitHub** 打开对应网页。
 - 请求失败时，确认设备可以访问 GitHub，并检查系统代理设置。
 
-<a id="frequently-asked-questions"></a>
-
 ## 常见问题
-
-<a id="why-are-there-no-notifications-after-i-sign-in"></a>
 
 ### 登录后为什么没有通知？
 
 先确认该 GitHub 账户有通知，再点击 **Refresh** 重试。
 
-<a id="why-is-open-on-github-temporarily-unavailable"></a>
-
 ### 为什么 Open on GitHub 暂时不可用？
 
 某些通知类型需要额外请求才能确定准确的 GitHub URL。请求加载期间或失败时，该按钮保持不可用，避免打开错误页面。
-
-<a id="privacy-and-permissions"></a>
 
 ## 隐私与权限
 
 gact 使用网络访问 GitHub API，并通过系统浏览器完成 GitHub 授权。当前版本没有独立账户服务器，也不收集 GitHub 密码。
 
 你可以随时在应用内退出登录，或从 Android 设置清除应用数据。
-
-<a id="report-a-problem"></a>
 
 ## 问题反馈
 
@@ -90,8 +72,6 @@ gact 使用网络访问 GitHub API，并通过系统浏览器完成 GitHub 授�
 - 可安全分享的截图或错误消息。
 
 不要包含访问令牌、授权码或其他敏感数据。
-
-<a id="development"></a>
 
 ## 开发
 

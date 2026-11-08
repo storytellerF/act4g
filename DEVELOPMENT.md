@@ -1,10 +1,6 @@
-<a id="development"></a>
-
 # 开发
 
 gact 使用 Rust、GPUI Mobile 和 Android Gradle。CI 在 Ubuntu 24.04 上运行，使用 JDK 17、Python 3.11 或更新版本，以及 `aarch64-linux-android` Rust target。仓库中的 Gradle Wrapper 选择 Gradle 9.8.2，无需单独安装 Gradle。CI 使用 `setup-gradle` 实现缓存和 Wrapper 验证。通过 `cargo install cargo-ndk --locked` 安装 `cargo-ndk`。
-
-<a id="android-toolchain"></a>
 
 ## Android 工具链
 
@@ -25,17 +21,11 @@ python3 scripts/android-build-checks.py apk android/gradle/app/build/outputs/apk
 
 先构建 Rust，再组装 APK，确保 Gradle 打包的是新库。Debug 构建不需要 OAuth 配置；构建 Rust 时提供 `CLIENT_ID` 可启用 GitHub 身份验证。
 
-<a id="signed-packages"></a>
-
 ## 签名包
 
 使用 `cargo ndk ... build --locked --release` 构建原生 release 库。在运行 `assembleAlpha` 或 `assembleRelease` 前，设置 `GACT_KEYSTORE_FILE`、`GACT_KEYSTORE_PASSWORD`、`GACT_KEY_ALIAS` 和 `GACT_KEY_PASSWORD`。可选的 `GACT_VERSION_CODE` 和 `GACT_VERSION_NAME` 用于覆盖包版本。对相应输出运行上述 APK 检查，再运行 Android SDK 的 `apksigner verify --verbose --print-certs <apk>` 验证签名。本地验证可以使用一次性签名密钥，但这不能验证正式发布的签名凭据。不得提交签名密钥或密码。
 
-<a id="diagnostics"></a>
-
 ## 诊断
-
-<a id="android-host-and-lifecycle-regression"></a>
 
 ### Android 宿主与生命周期回归
 
@@ -69,8 +59,6 @@ adb shell am instrument -w -e scenario background -e backgroundMs 60000 \
 
 运行 `python3 -m unittest discover -s scripts -p 'test_android_build_checks.py'`，执行包验证器的回归检查。
 
-<a id="rust-checks"></a>
-
 ## Rust 检查
 
 ```sh
@@ -78,8 +66,6 @@ cargo fmt --check
 cargo test --locked
 cargo clippy --locked --all-targets -- -D warnings
 ```
-
-<a id="continuous-integration"></a>
 
 ## 持续集成
 
