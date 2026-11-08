@@ -1,99 +1,100 @@
 # gact
 
-gact is a focused Android client for keeping up with the GitHub activity that
-matters to you.
+gact 是一款专注于 GitHub 动态的 Android 客户端，帮助你跟进关心的活动。
 
-> gact is in early development and is not an official GitHub application.
+> gact 尚处于早期开发阶段，并非 GitHub 官方应用。
 
-## Features
+<a id="features"></a>
 
-- View GitHub notifications and distinguish unread items
-- Browse accessible personal, organization, and collaborator repositories with separate open issue and PR counts
-- Hide repositories with no open issues or PRs, and open a repository to browse its items
-- Search by repository name or notification title
-- Read details for issues, pull requests, releases, and check runs
-- Open the corresponding page on GitHub from a notification
-- Keep your session securely between app launches
-- Use the app comfortably on full-screen, cutout, landscape, and split-screen
-  layouts
+## 功能
 
-## Download and installation
+- 查看 GitHub 通知，区分未读项目。
+- 浏览有权访问的个人、组织及协作仓库，分别查看未关闭的 issue 和 PR 数量。
+- 隐藏没有未关闭 issue 或 PR 的仓库，并进入仓库浏览各项内容。
+- 按仓库名称或通知标题搜索。
+- 阅读 issue、pull request、release 和 check run 的详情。
+- 从通知打开对应的 GitHub 页面。
+- 在多次启动之间安全保留登录会话。
+- 适配全屏、屏幕挖孔、横屏和分屏布局。
 
-gact has not been released yet. When builds become available, they will be
-published on the [Releases](../../releases)
-page.
+<a id="download-and-installation"></a>
 
-- **Release** builds are intended for everyday use.
-- **Alpha** builds contain the newest changes and may be less stable. Their app
-  icon includes an `ALPHA` ribbon.
+## 下载与安装
 
-gact supports Android 8.0 (API 26) and newer. Android may ask you to allow your
-browser or file manager to install unknown apps before installing an APK.
+gact 尚未发布。提供构建版本后，将发布在 [Releases](../../releases) 页面。
 
-The Android package name is `com.storytellerf.gact`.
+- **Release** 构建用于日常使用。
+- **Alpha** 构建包含最新变更，稳定性可能较低，应用图标带有 `ALPHA` 标记。
 
-## Sign in to GitHub
+gact 支持 Android 8.0（API 26）及以上版本。安装 APK 前，Android 可能要求允许浏览器或文件管理器安装未知来源应用。
 
-1. Open gact and tap **Sign in with GitHub**.
-2. gact opens GitHub's device authorization page in your browser.
-3. Tap **Copy code** in gact, paste it into GitHub's device authorization page, and approve access.
-4. Return to gact. The app completes sign-in and loads your notifications.
+Android 包名为 `com.storytellerf.gact`。
 
-gact never asks you to enter your GitHub password inside the app. Your session
-credential is stored in Android's secure storage and removed when you sign out.
-To show notification details from private repositories, gact requests GitHub's
-`repo` OAuth scope. GitHub currently does not offer a read-only OAuth scope for
-private repository content.
+<a id="sign-in-to-github"></a>
 
-## Using the app
+## 登录 GitHub
 
-- Tap **Repositories** in the inbox to view open issue and PR counts for your accessible repositories.
-- Tap a repository, then switch between **Issues** and **PRs**; tap an item to open it on GitHub.
-- Tap **Refresh** to load the latest notifications or repository data.
-- Tap a notification card to view its details.
-- Notification descriptions render Markdown headings, lists, emphasis, code, and links.
-- Use Android Back to return through detail and repository screens; at the root it moves the app to the background.
-- After the details load, tap **Open on GitHub** to open the matching web page.
-- If a request fails, confirm that your device can reach GitHub and check your
-  system proxy settings.
+1. 打开 gact，点击 **Sign in with GitHub**。
+2. gact 会在浏览器中打开 GitHub 设备授权页面。
+3. 在 gact 中点击 **Copy code**，将代码粘贴到 GitHub 设备授权页面并批准访问。
+4. 返回 gact，应用会完成登录并加载通知。
 
-## Frequently asked questions
+gact 不会要求你在应用中输入 GitHub 密码。会话凭据保存在 Android 安全存储中，退出登录时删除。为显示私有仓库的通知详情，gact 请求 GitHub 的 `repo` OAuth 权限。GitHub 目前没有针对私有仓库内容的只读 OAuth 权限。
 
-### Why are there no notifications after I sign in?
+<a id="using-the-app"></a>
 
-Confirm that the GitHub account has notifications, then tap **Refresh** to try
-again.
+## 使用应用
 
-### Why is Open on GitHub temporarily unavailable?
+- 在收件箱点击 **Repositories**，查看有权访问的仓库中未关闭的 issue 和 PR 数量。
+- 点击仓库，在 **Issues** 和 **PRs** 之间切换；点击条目即可在 GitHub 打开。
+- 点击 **Refresh**，加载最新通知或仓库数据。
+- 点击通知卡片，查看详情。
+- 通知描述支持渲染 Markdown 标题、列表、强调、代码和链接。
+- 使用 Android 返回操作逐级退出详情和仓库页面；在根页面执行返回会将应用移至后台。
+- 详情加载后，点击 **Open on GitHub** 打开对应网页。
+- 请求失败时，确认设备可以访问 GitHub，并检查系统代理设置。
 
-Some notification types require an additional request to resolve the exact
-GitHub URL. The button remains unavailable while that request is loading or if
-it fails, preventing the app from opening the wrong page.
+<a id="frequently-asked-questions"></a>
 
-## Privacy and permissions
+## 常见问题
 
-gact uses network access to communicate with the GitHub API and uses your
-system browser for GitHub authorization. The current version has no independent
-account server and does not collect your GitHub password.
+<a id="why-are-there-no-notifications-after-i-sign-in"></a>
 
-You can sign out inside the app at any time or clear its data from Android
-settings.
+### 登录后为什么没有通知？
 
-## Report a problem
+先确认该 GitHub 账户有通知，再点击 **Refresh** 重试。
 
-If notifications do not load, a screen looks incorrect, or a link opens the
-wrong page, please open an [issue](../../issues)
-and include:
+<a id="why-is-open-on-github-temporarily-unavailable"></a>
 
-- Your Android version and device model
-- The gact build type, if known
-- Steps that reproduce the problem
-- Any screenshots or error messages that are safe to share
+### 为什么 Open on GitHub 暂时不可用？
 
-Do not include access tokens, authorization codes, or other sensitive data.
+某些通知类型需要额外请求才能确定准确的 GitHub URL。请求加载期间或失败时，该按钮保持不可用，避免打开错误页面。
 
-## Development
+<a id="privacy-and-permissions"></a>
 
-See [DEVELOPMENT.md](DEVELOPMENT.md) for build instructions and checks.
+## 隐私与权限
 
-The project is under active development. Issues and pull requests are welcome.
+gact 使用网络访问 GitHub API，并通过系统浏览器完成 GitHub 授权。当前版本没有独立账户服务器，也不收集 GitHub 密码。
+
+你可以随时在应用内退出登录，或从 Android 设置清除应用数据。
+
+<a id="report-a-problem"></a>
+
+## 问题反馈
+
+如果通知无法加载、页面显示异常或链接打开了错误页面，请提交 [issue](../../issues)，并提供：
+
+- Android 版本和设备型号。
+- gact 构建类型（如果知道）。
+- 可复现问题的步骤。
+- 可安全分享的截图或错误消息。
+
+不要包含访问令牌、授权码或其他敏感数据。
+
+<a id="development"></a>
+
+## 开发
+
+构建说明和检查方法见 [DEVELOPMENT.md](DEVELOPMENT.md)。
+
+项目正在积极开发中，欢迎提交 issue 和 pull request。
